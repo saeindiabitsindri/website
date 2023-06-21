@@ -13,6 +13,14 @@ function Card(props) {
         </div>
     )
 }
+function importAll(r) {
+    let images = {};
+    r.keys().forEach((item, index) => {
+      images[item.replace('./', '')] = r(item);
+    });
+    return images;
+  }
+  
 
 function PostBearers() {
     const [post, setPosts] = useState([
