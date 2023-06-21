@@ -14,12 +14,11 @@ function Card(props) {
     )
 }
 function importAll(r) {
-    let images = {};
-    r.keys().forEach((item, index) => {
-      images[item.replace('./', '')] = r(item);
-    });
-    return images;
+    return r.keys().map(r);
   }
+  
+  const images = importAll(require.context('./images', false, /\.(png|jpe?g|svg)$/));
+   
   
 
 function PostBearers() {
